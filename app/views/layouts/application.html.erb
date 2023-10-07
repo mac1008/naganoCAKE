@@ -11,6 +11,68 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+
+    <h1>LOGO</h1>
+
+      <% if admin_signed_in? %>
+        <li>
+          <%= link_to "商品一覧", new_customer_registration_path %>
+          <!--URL仮-->
+        </li>
+        <li>
+          <%= link_to "会員一覧", new_customer_registration_path %>
+          <!--URL仮-->
+        </li>
+        <li>
+          <%= link_to "注文履歴一覧", new_customer_registration_path %>
+          <!--URL仮-->
+        </li>
+        <li>
+          <%= link_to "ジャンル一覧", new_customer_registration_path %>
+          <!--URL仮-->
+        </li>
+        <li>
+          <%= link_to "ログアウト", destroy_admin_session_path,method: :delete %>
+        </li>
+      <% elsif customer_signed_in? %>
+        <li>
+        <%= link_to "マイページ", new_customer_registration_path %>
+        <!--URL仮-->
+        </li>
+        <li>
+          <%= link_to "商品一覧", new_customer_registration_path %>
+          <!--URL仮-->
+        </li>
+        <li>
+          <%= link_to "カート", new_customer_registration_path %>
+          <!--URL仮-->
+        </li>
+        <li>
+          <%= link_to "ログアウト", destroy_admin_session_path,method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "About", new_customer_registration_path %>
+          <!--URL仮-->
+        </li>
+        <li>
+          <%= link_to "商品一覧", new_customer_registration_path %>
+          <!--URL仮-->
+        </li>
+        <li>
+          <%= link_to "新規登録", new_customer_registration_path %>
+        </li>
+        <li>
+          <%= link_to "ログイン", new_admin_session_path %>
+          <!--URLは管理者側のでOK？-->
+        </li>
+      <% end %>
+
+    </header>
+
+  <%= yield %>
+
   </body>
+
 </html>
