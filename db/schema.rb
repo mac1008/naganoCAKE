@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2023_10_07_050530) do
     t.string "postal_code", null: false
     t.string "address", null: false
     t.string "telephone_number", null: false
-    t.boolean "is_active", null: false
+    t.boolean "is_active", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2023_10_07_050530) do
     t.text "introduction", null: false
     t.integer "price", null: false
     t.integer "genre_id", null: false
-    t.boolean "is_active", null: false
+    t.boolean "is_active", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2023_10_07_050530) do
     t.integer "items_id", null: false
     t.integer "unit_purchase_price", null: false
     t.integer "quantity", null: false
-    t.integer "production_status", null: false
+    t.integer "production_status", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2023_10_07_050530) do
     t.string "shipping_postal_code", null: false
     t.string "shipping_address", null: false
     t.string "delivery_name", null: false
-    t.integer "status", null: false
+    t.integer "status", default: 1, null: false
     t.integer "postage", null: false
     t.integer "billing_amount", null: false
     t.integer "payment_method", null: false

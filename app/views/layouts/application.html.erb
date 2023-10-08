@@ -25,20 +25,18 @@
           <!--URL仮-->
         </li>
         <li>
-          <%= link_to "注文履歴一覧", new_customer_registration_path %>
-          <!--URL仮-->
+          <%= link_to "注文履歴一覧", admin_path %>
         </li>
         <li>
           <%= link_to "ジャンル一覧", new_customer_registration_path %>
           <!--URL仮-->
         </li>
         <li>
-          <%= link_to "ログアウト", destroy_admin_session_path,method: :delete %>
+          <%= link_to "ログアウト", destroy_customer_session_path,method: :delete %>
         </li>
       <% elsif customer_signed_in? %>
         <li>
-        <%= link_to "マイページ", new_customer_registration_path %>
-        <!--URL仮-->
+        <%= link_to "マイページ", customer_path(current_customer) %>
         </li>
         <li>
           <%= link_to "商品一覧", new_customer_registration_path %>
@@ -49,12 +47,11 @@
           <!--URL仮-->
         </li>
         <li>
-          <%= link_to "ログアウト", destroy_admin_session_path,method: :delete %>
+          <%= link_to "ログアウト", destroy_customer_session_path,method: :delete %>
         </li>
       <% else %>
         <li>
-          <%= link_to "About", new_customer_registration_path %>
-          <!--URL仮-->
+          <%= link_to "About", about_path %>
         </li>
         <li>
           <%= link_to "商品一覧", new_customer_registration_path %>

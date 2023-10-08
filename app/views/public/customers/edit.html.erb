@@ -1,0 +1,39 @@
+<h1>会員情報編集</h1>
+
+<%= form_with model: @customer do |f| %>
+  <table>
+    <tbody>
+      <tr>
+        <td>氏名</td>
+        <td><%= f.text_field model:@customer.last_name %></td>
+        <td><%= f.text_field model:@customer.first_name %></td>
+      </tr>
+      <tr>
+        <td>フリカナ</td>
+        <td><%= f.text_field model:@customer.last_name_kana %></td>
+        <td><%= f.text_field model:@customer.first_name_kana %></td>
+      </tr>
+      <tr>
+        <td>郵便番号</td>
+        <td><%= f.text_field model:@customer.postal_code %></td>
+      </tr>
+      <tr>
+        <td>住所</td>
+        <td><%= f.text_field model:@customer.address %></td>
+      </tr>
+      <tr>
+        <td>電話番号</td>
+        <td><%= f.text_field model:@customer.telephone_number %></td>
+      </tr>
+      <tr>
+        <td>メールアドレス</td>
+        <td><%= f.text_field model:@customer.email %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><%= f.submit "編集内容を変更する" %></td>
+        <td><%= link_to "退会する", "" %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
