@@ -2,23 +2,21 @@
 
 class Admin::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  def after_sign_in_path_for(resource)
-    items_path(resource)
-  end
+
   # GET /resource/sign_in
   #def new
   #   super
   #end
 
   # POST /resource/sign_in
-  def create
-    @admin = Admin.new
-  end
+  #def create
+  # super
+  #end
 
   # DELETE /resource/sign_out
-  def destroy
+  #def destroy
   #   super
-  end
+  #end
 
   # protected
 
