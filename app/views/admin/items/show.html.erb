@@ -5,25 +5,25 @@
 <table>
   <tr>
     <td>商品名</td>
-    <td></td>
+    <td><%= @item.name %></td>
   </tr>
   <tr>
     <td>商品説明</td>
-    <td></td>
+    <td><%= @item.introduction %></td>
   </tr>
   <tr>
     <td>ジャンル</td>
-    <td></td>
+    <td><%= @item.genre.name %></td>
   </tr>
   <tr>
     <td>税込価格</br>
     （税抜価格）</td>
-    <td></td>
+    <td><%= @item.price * 1.1 %>(<%= @item.price %>)</td>
   </tr>
   <tr>
     <td>販売ステータス</td>
-    <td></td>
+    <td><%= @item.is_active %></td>
   </tr>
 </table>
 
-<%= link_to "編集する", "" %>
+<%= link_to "編集する", edit_admin_item_path %>

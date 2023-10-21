@@ -1,4 +1,4 @@
-<h1>商品新規登録</h1>
+<h1>商品編集</h1>
 
 <tabll>
   <%= form_with model: @item do |f| %>
@@ -33,6 +33,6 @@
         <%= form.label :is_active_FALSE, "販売停止中" %>
       </td>
     </tr>
-    <tr><%= f.submit "新規登録" %></tr>
+    <tr><%= f.submit "変更を保存" %></tr>
   <% end %>
 </tabll>
