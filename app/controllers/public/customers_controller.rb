@@ -13,9 +13,11 @@ class Public::CustomersController < ApplicationController
     redirect_to customer_path(current_customer)
   end
   def confirm
-    customer = current_customer
   end
   def logical_delete
     customer = current_customer
+    customer.update_attribute(name, False)
+    redirect_to new_customer_registration_path
   end
+
 end

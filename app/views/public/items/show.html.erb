@@ -1,0 +1,7 @@
+<!--仮-->
+<%= image_tag @book.user.get_profile_image(100,100) %>
+<%= link_to @book.user.name, user_path(@book.user.id) %>
+
+<%= @book.title %>
+<%= @book.body %>
+

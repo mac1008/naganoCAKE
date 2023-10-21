@@ -1,0 +1,37 @@
+<h1>商品新規登録</h1>
+
+<tabll>
+  <%= form_with model: @customer do |f| %>
+    <tr>
+      <td>商品画像</td>
+      <td><%= f.file_field :image, accept: "image/*" %></td>
+    </tr>
+    <tr>
+      <td>商品名</td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td>商品説明</td>
+      <td<%= f.text_area :introduction %>></td>
+    </tr>
+    <tr>
+      <td>ジャンル</td>
+      <td><%= f.select :name, [["ケーキ", "ケーキ"], ["プリン", "プリン"],["焼き菓子", "焼き菓子"],["キャンディ", "キャンディ"]], include_blank: "選択して下さい" %></td>
+    </tr>
+    <tr>
+      <td><税抜価格/td>
+      <td><%= f.text_field :price %></td>
+    </tr>
+    <tr>
+      <td>販売ステータス</td>
+      <td>
+        <%= form.radio_button :is_active, "TRUE" %>
+        <%= form.label :is_active_TRUE, "販売中" %>
+      </td>
+      <td>
+        <%= form.radio_button :is_active, "FALSE" %>
+        <%= form.label :is_active_FALSE, "販売停止中" %>
+      </td>
+    </tr>
+  <% end %>
+</tabll>
