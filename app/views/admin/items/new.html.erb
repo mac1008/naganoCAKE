@@ -1,7 +1,8 @@
 <h1>商品新規登録</h1>
+<%= link_to "+", "new_admin_item_path" %>
 
 <tabll>
-  <%= form_with model: @customer do |f| %>
+  <%= form_with model: @item do |f| %>
     <tr>
       <td>商品画像</td>
       <td><%= f.file_field :image, accept: "image/*" %></td>
@@ -33,5 +34,6 @@
         <%= form.label :is_active_FALSE, "販売停止中" %>
       </td>
     </tr>
+    <tr><%= f.submit "新規登録" %></tr>
   <% end %>
 </tabll>
